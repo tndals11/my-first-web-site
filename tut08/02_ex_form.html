@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form input </title>
+  <style>
+    input::placeholder {
+      color: royalblue;
+      font-style: italic;
+    }
+    input[type='submit'] {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <ul>
+      <li>
+        <label>검색어</label>
+        <input required type="text"
+        placeholder="검색어를 입력하세요"
+        name="search" 
+        class="search" 
+        id="search">
+      </li>
+    </ul>
+    <input class="btn" type="submit" value="검색"><br>
+    <!-- <button type="submit">SEARCH</button> -->
+  </form>
+  <script>
+    function check() {
+      ///alert( document.querySelector("input[type=text]").value );
+      // alert( document.querySelector("input[name=search]").value );
+      
+      // 페이지에 동일한 이름 있어도 사용 가능
+      // alert( document.querySelector(".search").value );
+      // alert( document.querySelector("#search").value );
+    }
+    
+    // document.querySelector(".btn").onclick = check
+    // document => script 안에서의 body
+    let search = document.querySelector(".search");
+    let btn = document.querySelector(".btn");
+  
+    // btn.onclick = function () {
+    //   alert(search.value);
+
+    // }
+
+      btn.onclick = () => {
+        alert(search.value);
+      }
+
+  </script>
+</body>
+</html>

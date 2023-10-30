@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../tut06/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Form 예제</title>
+  <style>
+    body {
+      background-color: #ccc;
+      font-family: 'Gothic A1', sans-serif;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    form {
+      width: 300px;
+      background-color: #fff;
+      padding: 20px 20px;
+      /* <-- 화면고정 공식
+      osition: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); --> */
+      /*         방향 번짐 진하게 */
+      box-shadow: 0 0 10px 5px #9c9b9b;
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    input {
+      border: 0;
+      border: 1px solid #333;
+      padding: 6px 8px;
+      font-size: 14px;
+      outline: 0;
+    }
+    input:focus {
+      background-color: #eee;
+      font-size: 14px;
+    }
+    ul li * { 
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .btn {
+      margin-top: 5px;
+      background-color: royalblue;
+      color: white;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- 1. method => 전송 방식(post, get)
+    (1) get : 속도 우선, 보안 x 길이제한o (검색할 때 사용)
+    (2) post : 안전하게 데이터 처리 길이제한 x  
+  
+    2. action : 정보 입력 => 어디 페이지로 이동해서 처리를 할 지
+    3. encType : 첨부파일
+    4. id : 일반적으로 자바스크립트를 처리할 때 사용한다
+    5. class : 자바크스크립트 또는 디자인 
+  
+    button 
+    1. type = submit ( Enter, click ) 두가지 동시에 가능
+    2. type = button ( click ) 클릭만 가능
+  -->
+  <form name="frm" method="post">
+    <h3>로그인</h3>
+    <ul>
+      <li>
+      <label>아이디</label>
+        <input type="text" name="userid" class="userid" placeholder="아이디를 입력하세요." required>
+      </li>
+      <li>
+      <label>비밀번호</label>
+        <input type="password" name="passwd" class="passwd" placeholder="비밀번호를 입력하세요" required>
+      </li>
+      <li>
+        <label>비밀번호 확인</label>
+          <input type="password" name="passwd2" class="passwd2" placeholder="비밀번호 확인을 입력하세요">
+        </li>
+      <li>
+        <input type="submit" value="로그인" class="btn" >
+      </li>
+    </ul>
+  </form>
+  <!-- <script>
+    function frmCheck(e) {
+      // 버튼 또는 a가 가지고 있는 이동하려는 기본 속성을 없애는 태그 
+      e.preventDefault();
+
+      let userid = document.querySelector(".userid");
+      let passwd = document.querySelector(".passwd");
+      let passwd2 = document.querySelector(".passwd2");
+
+      // alert("버튼이 눌러졌습니다.");
+      // userid input의 값을 가져 오기
+      if( userid.value == "") {
+        alert("아이디를 입력해주세요");
+        userid.focus();
+        return false;
+      } 
+
+      if( !passwd.value ) {
+            alert("비밀번호를 입력하세요");
+            passwd.focus();
+            return false;
+      }
+
+      if ( passwd.value != passwd2.value ) {
+          alert("비밀번호가 일치하지 않습니다. 확인하세요");
+          passwd.value = "";
+          passwd2.value ="";
+          passwd.focus();
+          return false;
+      }
+    }
+    document.querySelector(".btn").onclick = frmCheck;
+  </script> -->
+</body>
+</html>
