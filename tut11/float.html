@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float 예제</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .wrap {
+      background-color: #555;
+    }
+    
+    /* :after 사각형 뒤  :before 사각형 설정*/
+    /* float 오류가 있기 때문에 설정을 없애주기위해 clear사용 */
+    .wrap:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+
+    .item {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      color: #fff;
+      margin: 10px;
+      /* 박스에 item에 float를 주면 가로배치가된다 */
+      /* float을 쓰면 배경색이 없어진다 */
+      /* float 설정을 해제 clear를 해주어야 한다 */
+      float: left;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+</body>
+</html>
