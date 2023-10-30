@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>h,p 예제 2</title>
+  <!-- 외부 라이브러리 : html 밖에서 가져온 것들 -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    h2 {
+  font-family: 'Gothic A1', sans-serif;
+  margin-bottom: 10px;
+}
+p {
+  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  text-align: justify;
+  color: rgba(0, 0, 0, .7);
+  }
+div {
+  width: 40%;
+  /* 선그리기 두께 직선 색깔 */
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  margin: 20px;
+}
+.clr01 {
+  color: tomato;
+}
+.clr02 {
+  color: blue;
+}
+i {
+  color: blue;
+}
+i:hover {
+  color: tomato;
+  /* 색깔이 tomato -> red로 천천히 부드럽게 바뀜 */
+  /* 0.1(빠름) 속도이기 때문에 s를 붙여야한다 */
+  transition: 0.5s;
+
+  /* 손가락 모양을 만들어 내는 태그 */
+  /* 원래 손가락 모양을 만들어 내는 것은 a태그 */
+  cursor: pointer;
+}
+button {
+  /* 값을 2개만 입력할 시 8px(위,아래), 12px(좌,우) */
+  padding: 8px 12px;
+  border: 0;
+  background-color: green;
+  color: white;
+  margin-top: 10px;
+}
+button:hover {
+  transition: 0.8s;
+  background-color: rgba(0, 0, 0, .7);
+  cursor: pointer;
+}
+img {
+  border-radius: 10px;
+}
+img:hover {
+  transform: rotate(-180deg);
+  transition: 1.5s;
+}
+
+  </style>
+</head>
+<body>
+  <div>
+    <h2><i class="fa-solid fa-computer"></i><span class="clr01">코리아IT아카데미에서는</span><br><span class="clr02">누구든지 IT전문가가 될 수 있습니다.</span></h2>
+    <img src="../tut01/images/bill.jpg" alt="빌게이츠" title="이미지 위에 마우스를 올리면 설명하는 글 " width="300px">
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil dolorem aliquam veniam, natus nobis similique autem doloribus quod ab, nulla dicta dolores deserunt, iste minus quas sint? Maxime saepe minima autem vitae sint aperiam, quae, quos impedit nihil iusto omnis nobis necessitatibus! Voluptatibus harum dignissimos, perferendis cupiditate similique assumenda voluptas.
+      <a href="https://www.naver.com" target="_blank" class="url1">
+        <br><button>Naver</button>
+      </a>
+    </p>
+  </div>
+</body>
+</html>
