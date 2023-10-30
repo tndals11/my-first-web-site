@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 100px;
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  ul li, ol li, dl dt {
+    list-style: none;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  ol li {
+    float: left;
+    text-align: center;
+  }
+  dl dt {
+    display: inline-block;
+  }
+  ul li {
+    background-color: #ff8282;
+    border-radius: 3%;
+    padding: 4px 8px;
+  }
+  ul li:hover {
+    background-color: royalblue;
+    transition: 0.7s;
+  }
+  ul li a:hover {
+    color: white;
+  }
+  ul li a {
+    /* 메뉴 글자 크기는 보통 14px
+      단 유틸리티 메뉴는 12px
+    */
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+  /* 
+  메뉴 만드는 3가지 방법
+  1. display : flex => 부모에 flex 설정
+  2. float : left; => 자식에 float
+  3. display : inline-block; => 자식에 inline-block
+  4. 인라인타입 : a, span : 넓이 높이, 여백 지정에 문제가 생길 수도 있다
+  */
+</style>
+</head>
+<body>
+  <ul>
+    <li><a href="">Menu1</a></li>
+    <li><a href="">Menu2</a></li>
+    <li><a href="">Menu3</a></li>
+  </ul>
+  <br>
+  <br>
+  <ol>
+    <li><a href="">Menu1</a></li>
+    <li><a href="">Menu2</a></li>
+    <li><a href="">Menu3</a></li>
+  </ol>
+  <br>
+  <br>
+  <dl>
+    <dt><a href="">Menu1</a></dt>
+    <dt><a href="">Menu2</a></dt>
+    <dt><a href="">Menu3</a></dt>
+  </dl>
+</body>
+</html>
