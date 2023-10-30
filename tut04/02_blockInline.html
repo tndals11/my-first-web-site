@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블록타입 & 인라입타입 예제</title>
+</head>
+<style>
+  span {
+    background-color: red;
+  }
+  p {
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    margin-right: 20px;
+  }
+  a {
+    background-color: orchid;
+    display: inline-block;
+  }*
+  .nav {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+  }
+  img {
+    width: 100%;
+  }
+</style>
+<body>
+  <!-- 블록을 인라인으로 => float, flex -->
+  <!-- display : inline-block -->
+
+  <!-- 블록 : 브라우저 해상도와 상관없이 무조건 100% 넓이를 가진다. -->
+  <!-- 인라인 : a, span, image, table... 내용물 크기 만큼만 넓이가 만들어짐-->
+
+  <span>메뉴1</span>
+  <span>메뉴1</span>
+  <span>메뉴1</span>
+  <span>메뉴1</span>
+  
+  <div class="nav">
+  <p>
+  <img src="../tut01/images/bill.jpg" alt="빌게이츠">
+  </p>
+  <p>
+    <img src="../tut01/images/bill.jpg" alt="빌게이츠">
+  </p>
+  <p>
+    <img src="../tut01/images/bill.jpg" alt="빌게이츠">
+  </p>
+  <p>
+    <img src="../tut01/images/bill.jpg" alt="빌게이츠">
+  </p>
+  <p> 
+    <img src="../tut01/images/bill.jpg" alt="빌게이츠">
+  </p>
+  <p> 
+    <img src="../tut01/images/bill.jpg" alt="빌게이츠">
+  </p>
+  </div>
+
+
+
+  <a href="">메뉴1</a>
+  <a href="">메뉴1</a>
+  <a href="">메뉴1</a>
+  <a href="">메뉴1</a>
+
+
+</body>
+</html>
