@@ -1,0 +1,16 @@
+@charset 'utf-8';
+/* 리셋시작 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+}
+
+ul li {
+  list-style: none;
+}
+/* 리셋 끝 */
