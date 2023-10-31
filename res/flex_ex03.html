@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* flex 1차원 처리 2차원 처리는 grid */
+    /* item을 담고있는 것이 cotainer이기 때문에 flex를 준다 */
+    .flex-container{
+      background-color: #ccc;
+      padding: 5px 0;
+    
+      /* 가로 정렬 => justify-content 사용*/
+      /* 배치 왼쪽, 가운, 오른 */
+      display: flex;
+
+      /* 자식 왼쪽 배치 start */
+      justify-content: start;
+
+      /* 자식 가운데 정렬 center*/
+      justify-content: center;
+
+      /* 자식 오른쪽 배치 end */
+      /* 로고나 왼쪽에 글이나 오른쪽에 메뉴가 들어갈 경우에는 end를 사용하지않는다 */
+      /* 그럴 경우에는 space-between사용 */
+      justify-content: end;
+
+      /* 배분정렬 왼쪽 끝, 오른쪽 끝, 가운데*/
+      /* space-between : 좌우 양끝을 붙이고 동일한 여백을 부여한다*/
+      justify-content: space-between;
+      /* space-around 좌우에 여백이 생긴다*/
+      justify-content: space-around;
+
+      /* -------------------------------------------------------------------------- */
+
+      /* 세로 정렬을 하기 위해서는 높이값이 무조건 필요하다 */
+      height: 500px;
+
+      /* 세로 정렬 => align-items를 사용*/
+      /* 상단에 위치 */
+      align-items: start;
+      /* 중단에 위치 */
+      align-items: center;
+      /* 하단에 위치 */
+      align-items: end;
+    }
+
+    /*nth-child(순서) => 숫자가 들어가는 요소에 값을 지정*/
+    /* 각각 따로 움직일 때에는 => align-self를 사용해야한다 */
+    /* 첫번째 요소는 왼쪽 */
+    div.item:nth-child(1) {
+      align-self: start;
+    }
+    /* 두번째 요소에는 중앙 */
+    div.item:nth-child(2) {
+      align-self: center;
+    }
+    /* 세번째 요소는 오른쪽 */
+    div.item:nth-child(3) {
+      align-self: end;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      color: white;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+</body>
+</html>
