@@ -1,0 +1,118 @@
+<header>
+    <div class="adv">
+      <div class="adv-wrap">
+        <span class="adv_left">ARC'TERYX</span>
+        <span class="adv-right"></span>
+      </div>
+    </div>
+    
+.adv {
+  background-color: #111;
+  color: white;
+  font-size: 20px;
+}
+.adv-wrap {
+  width: 1400px; => 1400px 지정
+  margin: 0 auto; => div 박스를 중앙으로 옮길려면 margin: 0 auto를 주어야한다
+  padding: 20px 0;
+  text-align: center; => 글자 중간정렬 
+}
+
+    <nav> nav => 네비게이션
+      <div class="nav-wrap"> 
+        <h4>ARC'TERYX | VEILANCE </h4> 네비에 헤드부분
+          <ul>
+            <li>HOME</li> => li를 줘서 flex처리로 가로정렬
+            <li>About</li>
+            <li>Shop</li>
+            <li>Donate</li>
+            <li>Contact</li>
+          </ul>
+      </div> 
+    </nav>
+    
+nav {
+  background-color: #333;
+}
+.nav-wrap {
+  width: 1400px; => 감싸는 부분에 1400px 지정 
+  margin: 0 auto; => box를 중앙으로 옮길려면 magin: 0auto를 사용해야한다 감싸고 있는 wrap에다가 magin:0 outo지정
+  padding: 20px 0;
+  display: flex; h4와 li를 가로 배치하기 위해 사용 (h4와 ul은 동일한 위치에 존재하기 때문에 그것을 감싸고있는 wrap에 지정해준다)
+  justify-content: space-between; 사이간격마다 일정한 공백 
+}
+.nav-wrap ul {
+  display: flex; ul과 li를 가로 정렬을 하기위해 flex사용
+  margin-top: 2.5px
+}
+.nav-wrap ul li {
+  list-style: none; => li의 특징 .이 붙는데 이것을 없애는것
+  color: white;
+  margin-left: 40px;
+}
+.nav-wrap h4 {
+  color: white;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+
+
+<div class="bg"> => background         img=> width100%
+      <div class="bg-wrap">
+        <div class="bg-content">
+          <h1>Outdoor Sports<br>Since 1989</h1> => bg 헤드
+          <p>Heavy coastal rain, deep mountain snow, chilling wind. These are the men’s shell jackets built to manage the elements’ harshest realities.</p>
+          <button>Shop Merch</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+.bg {
+  width: 100%; => 이미지는 width 값 => 무조건 100%
+  height: 600px;
+  background-image: url(../images/1.jpg);
+  background-repeat: no-repeat; => 이미지는 부족한 부분을 반복해서 채운다 그것을 없애는 것
+  background-size: cover; => 이미지를 꽉채우는
+  background-position: bottom; => 이미지 사진의 위치
+}
+.bg-wrap {
+  width: 1400px; => 1400px 지정
+  margin: 0 auto; => 박스를 중앙으로 옮길 때에는 0 auto를 지정
+  display: flex; => 가로정렬하기 위해 사용
+  align-items: center; => 이미지 위에 글을  중앙으로 위치 
+  height: 500px; => div로 나누어져 있는 영역이기 때문에 높이값을 줘서 맞춰야한다
+}
+.bg-content {
+  width: 500px; => h1과 p button을 감싼 content 높이를 지정해줘야 글씨가 나온다
+}
+.bg-content h1 {
+  font-size: 63px;
+  font-weight: bolder; => 글씨 굵게 
+  text-transform: uppercase; => 대문자 지정
+  color: white;
+  letter-spacing: 2px ; => 글자 사이간격 (자간)
+  text-shadow: 2px 2px 2px #222; => 문자에 그림자 주는것 
+}
+.bg-content p {
+  color: #fff;
+  text-shadow: 2px 2px 2px #222;
+  font-size: 20px;
+  margin-top: 20px;
+}
+button {
+  border: 0;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 12px;
+  background-color: transparent;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 20px;
+}
+button:hover { => 마우스를 올릴경우 
+  color: transparent;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 3px;
+}
+ex web 뜯어보기
