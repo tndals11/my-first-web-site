@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raido Button : 하나 선택</title>
+</head>
+<body>
+  <form action="" name="frm">
+    <fieldset>
+      <legend>회원가입 박스</legend>
+      <p>성별을 선택하세요.</p>
+      <label>
+        <!-- name은 같아야한다 그대신 value에 값을 주어 구분한다 -->
+        <input type="radio" name="gender" value="M" checked>남성
+      </label>
+      <label>
+        <input type="radio" name="gender" value="W">여성
+      </label>
+      <P>
+        <input type="submit" value="회원가입" >
+      </P>
+    </fieldset>
+  </form>
+
+  <script>
+    // radio같은 경우에는 from부분에 이름을 부여해 접근하는 것이 쉽다
+    // from 부분에 부여한 name의 이름으로 접근한다
+    // console.log(document.frm.gender[0].value); 결과 = M
+    // console.log(document.frm.gender.length); 결과 = 2
+
+    document.querySelector("input[type=submit]").addEventListener("click", function(e) {
+      // e.preventDefault() => page의 이동을 막아주는것 
+      e.preventDefault();
+
+      for(let i = 0; i < document.frm.gender.length; i++ ) {
+        if(document.frm.gender[i].checked) {
+          let result = document.frm.gender[i].value;
+        if( result == "M") {
+          msg = "남성";
+        } else  {
+          msg = "여성";
+        }
+        alert(`선택한 성별은 ${msg}입니다.`);
+        }  
+      }     
+    });
+
+  </script>
+</body>
+</html>
