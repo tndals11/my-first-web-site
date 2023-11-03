@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <title>Document</title>
+  <style>
+    header {
+      background-color: royalblue;
+      height: 450px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .bg-wrap {
+      display: flex;
+      align-items: center;
+      height: 450px;
+    }
+    .bg-content {
+      color: #fff;
+      width: 50%;
+    }
+    .bg-content h1 {
+      font-size: 40px;
+    }
+    .bg-content p {
+      color: rgb(255, 255, 255, 0.6);
+    }
+    .box-wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+    /* box3개를 1280을 나누면 = 426.6666 */
+    .box {
+      background-color: royalblue;
+      color: white;
+      padding: 20px;
+      width: 415px;
+    }
+    .box h2 {
+      margin-bottom: 10px;
+    }
+    .box p {
+      color: rgb(255, 255, 255, 0.6);
+    }
+    section {
+      padding: 100px 0 ;
+    }
+
+    @media (max-width: 800px) {
+      header {
+      height: 600px;
+    }
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .bg-wrap {
+      justify-content: center;
+      height: 600px;
+    }
+    .bg-content {
+      width: 100%;
+      text-align: center;
+    }
+    .bg-content h1 {
+      font-size: 40px;
+    }
+    .bg-content p {
+      color: rgb(255, 255, 255, 0.6);
+    }
+    .box-wrap {
+      display: block;
+      justify-content: space-between;
+    }
+    /* box3개를 1280을 나누면 = 426.6666 */
+    .box {
+      width: 100%;
+    }
+    .box:nth-child(2) {
+      margin: 20px 0;
+    }
+    .box h2 {
+      margin-bottom: 10px;
+    }
+    .box p {
+      color: rgb(255, 255, 255, 0.6);
+    }
+    section {
+      padding: 20px 0 ;
+    }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="bg-wrap">
+        <div class="bg-content">
+          <h1>Korea'it academy</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt officiis culpa dicta nulla amet, ducimus eos deserunt earum consequatur sed.</p>
+        </div>
+      </div>
+    </div>  
+  </header>
+    <main>
+      <div class="container">
+        <section>
+          <div class="box-wrap">
+            <div class="box">
+              <h1>Spring Framwork</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ea, sunt animi sapiente quaerat accusamus.</p>
+            </div>
+            <div class="box">
+              <h2>Frontend Design</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ea, sunt animi sapiente quaerat accusamus.</p>
+            </div>
+            <div class="box">
+              <h2>Javascript Library</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ea, sunt animi sapiente quaerat accusamus.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
