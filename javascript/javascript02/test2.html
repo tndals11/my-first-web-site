@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      list-style: none;
+    }
+    fieldset {
+    margin-top: 50px;
+    width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <!-- url에 정보가 남게하려면 => get -->
+  <!-- url에 정보가 안남게하려면 => post -->
+    <fieldset>
+      <legend>Login Box</legend>
+    <ul>
+      <li>
+        <label>아이디</label>
+        <!-- 아이디는 text name과 class는 거의 무조건 붙여준다 -->
+        <input type="text" name="userid" class="userid" placeholder="아이디를 입력해주세요">
+      </li>
+      <li>
+        <label>비밀번호</label>
+        <input type="password" name="passwd" class="passwd" placeholder="비밀번호를 입력해주세요">
+      </li>
+      <li>
+        <!-- button => 클릭만 사용 가능 -->
+        <!-- submit => 클릭하거나 엔터 두개다 사용가능 -->
+        <input type="submit" value="로그인">
+      </li>
+      <li>
+        <label for="">범위</label>
+        <input type="range">
+      </li>
+      <li>
+        <label for="">달력</label>
+        <input type="date">
+      </li>
+      <li>
+        <label for="">검색</label>
+        <input type="search">
+      </li>
+      <li>
+        <label for="">전화번호</label>
+        <input type="tel">
+      </li>
+      <li>
+        <label for="">이메일</label>
+        <input type="email">
+      </li>
+    </ul>
+    </fieldset>
+  </form>
+    </fieldset>
+    <fieldset>
+      <legend>radio type</legend>
+      <label for=""><input type="radio" name="" id="">radio type 1</label>
+      <label for=""><input type="radio" name="" id="">radio type 2</label>
+      <label for=""><input type="radio" name="" id="">radio type 3</label>
+    </fieldset>
+    <fieldset>
+      <legend>check box type</legend>
+      <label for=""><input type="checkbox" name="" id="">check box type 1</label>
+      <label for=""><input type="checkbox" name="" id="">check box type 2</label>
+      <label for=""><input type="checkbox" name="" id="">check box type 3</label>
+    </fieldset>
+    <fieldset>
+        <legend>부서선택</legend>
+        <ul>
+          <li>
+            <label for="">부서명</label>
+            <!-- select > option > value -->
+            <select name="dept" id="dept" >
+              <option value="">부서선택</option>
+              <option value="100">인사과</option>
+              <option value="200">자재과</option>
+              <option value="300">비서실</option>
+              <option value="900">임원실</option>
+            </select>
+          </li>
+          <li>
+            <button type="submit">회원가입</button>
+          </li>
+        </ul>
+      </fieldset>
+  </form>
+</body>
+</html>

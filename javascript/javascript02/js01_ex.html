@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px ;
+    }
+    li {
+      list-style: none;
+      padding: 10px 20px;
+    }
+    select {
+      border: 0;
+      border: 1px solid #ccc;
+      color: #333;
+      border-radius: #555;
+      padding: 4px 8px;
+    }
+    ul li:last-child{
+      text-align: right;
+    }
+    button {
+      border: 0;
+      border: 1px solid #ccc;
+      color: #333;
+      border-radius: #555;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>사원등록</h2>
+    <form action="">
+      <fieldset>
+        <legend>부서선택</legend>
+        <ul>
+          <li>
+            <label for="">부서명</label>
+            <!-- select > option > value -->
+            <select name="dept" id="dept" >
+              <option value="">부서선택</option>
+              <option value="100">인사과</option>
+              <option value="200">자재과</option>
+              <option value="300">비서실</option>
+              <option value="900">임원실</option>
+            </select>
+          </li>
+          <li>
+            <button type="submit">회원가입</button>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </div>
+  
+  <script>
+    // // value값을 출력 
+    console.log(document.querySelector("#dept").options);
+    // // innerText 사람의 눈에 보이는 text 출력
+    // console.log(document.querySelector("#dept").options[1].innerText);
+    
+    // let sel = document.querySelector("#dept")
+
+    // for(let i = 0; i < sel.options.length; i++) {
+    //   console.log( sel.options[i].value);
+    // }
+
+    let sel = document.querySelector("#dept");
+    document.querySelector("button").addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // sel.selectedIndex => 선택한 배열의 번호 
+      console.log(sel.options[sel.selectedIndex].value);
+
+      if( sel.options[sel.selectedIndex].value == "" ) {
+        alert("부서를 선택해주세요");
+        return false;
+      
+      } else {
+        // sel.options[sel.selectedIndex].innerText => inner 사람이 보이는 텍스트를 출력
+        // sel.options[sel.selectedIndex].value => value에 지정된 값을 출력한다
+        console.log(`선택한 부서명은 ${sel.options[sel.selectedIndex].innerText}이고 부서코드는 ${sel.options[sel.selectedIndex].value}입니다`);
+      }
+
+    });
+    
+  </script>
+</body>
+</html>
