@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let user = {
+      userid: "busan",
+      name: "홍길동",
+      passwd: "1234"
+    };
+    //{} for ~ in = 향상된 for문과 비슷
+    //[] 배열명.forEach
+
+    for ( key in user ) {
+      console.log([key]); // key값을 뽑아내는
+      console.log(user[key]); // value의 값을 뽑아내는
+    }
+
+
+
+  </script>
+</body>
+</html>
