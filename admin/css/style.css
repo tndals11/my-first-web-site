@@ -1,0 +1,92 @@
+@charset "urf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Roboto:wght@300;400&display=swap');
+
+    *{ margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center ;
+      height: 100vh;  
+      background-color: white;
+    }
+    i {
+      margin-right: 10px;
+    }
+    .login-form {
+      position: relative;
+      border: 0;
+      padding: 40px 40px;
+      border-radius: 10px;
+      /* border: 1px solid #777; */
+      /* background-color: white;
+      box-shadow: 2px 2px 2px #333; */
+    }
+    .login-form h1 {
+      font-size: 1.5rem;
+      color: black;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .login-form p {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.0rem;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .int-area {
+      width: 300px;
+      position: relative;
+      border: 0;
+    }
+    .int-area .font {
+      position: absolute;
+    }
+    .int-area input {
+      width: 100%;
+      padding: 30px 15px 10px;
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid black;
+      font-size: 0.7rem;
+      color: black;
+      outline: none;
+      font-family: 'Roboto', sans-serif;
+    }
+    .int-area label {
+      position: absolute;
+      left: 10px;
+      top: 17px;
+      font-size: 1.0rem;
+      color: black;
+      transition: 0.5s;
+    }
+    .int-area input:focus + label, .int-area input:valid + label {
+      top: 0px;
+      font-size: 0.8rem;
+      color: royalblue; 
+    }
+    .btn-area {
+      margin-top: 30px;
+    }
+    .btn-area button {
+      width: 100%;
+      height: 50px;
+      background-color: royalblue;
+      color: white;
+      font-size: 1.0rem;
+      border: 0;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 1px 1px 1px #333;
+    }
+    .caption {
+      margin-top: 20px;
+    }
+    .caption a {
+      font-size: 0.6rem;
+      color: black;
+      margin-left: 105px;
+      font-weight: bold
+    }
