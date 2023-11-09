@@ -13,25 +13,90 @@
       box-sizing: border-box;
     }
     body {
+    }
+    /* 상단 메뉴 설정 */
+    header,
+    main {
       font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    nav {
+      padding-bottom: 20px;
+      box-shadow: 0 0 5px 0 rgba(90, 91, 95, 0.5);
+    }
+
+    .nav-wrap {
+      background-color: white;
+      width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nav-wrap #logo {
+      margin-top: 20px;
+    }
+
+    .nav-wrap ul {
+      display: flex;
+      margin-top: 17px;
+    }
+
+    .nav-wrap ul li {
+      list-style: none;
+      font-size: 23px;
+      padding: 6px 22px;
+    }
+
+    .nav-wrap ul li:hover {
+      cursor: pointer;
+      background-color: #cf152d;
+      color: white;
+      border-radius: 30px;
+    }
+
+    .nav-wrap ul div {
+      margin-right: 30px;
+    }
+
+    .nav-wrap ul div img {
+      width: 100%;
+      height: 40px;
+      object-fit: cover;
+    }
+
+    .nav-wrap ul div img:hover {
+      cursor: pointer;
+    }
+
+    .nav-wrap ul li:nth-child(-n+3) {
+      margin-right: 50px;
+    }
+    /*---------main영역------------*/
+    .container {
+      width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+      color: black;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
     .create-form {
       position: relative;
       border: 0;
       padding: 60px 60px;
+      margin-top: 60px;
     }
     .create-form h1 {
-      font-size: 1.6rem;
+      font-size: 2.3rem;
       color: black;
       text-align: center;
       margin-bottom: 30px;
     }
     .int-area {
-      width: 400px;
+      width: 500px;
       position: relative;
     }
     .int-area input {
@@ -40,12 +105,12 @@
       background-color: transparent;
       border: 0;
       border-bottom: 1px solid #e7e7e7;
-      font-size: 0.7rem;
+      font-size: 0.9rem;
       color: black;
       outline: none;
     }
     .int-area label {
-      font-size: 0.8rem;
+      font-size: 1.1rem;
       font-weight: bold;
     }
     .send-eamil {
@@ -91,30 +156,57 @@
       border-radius: 15px;
       cursor: pointer;
       box-shadow: 1px 1px 1px #333;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .btn-area #verification:hover {
+      opacity: 0.9;
     }
 
   </style>
 </head>
 <body>
-  <section class="create-form">
-    <h1>비밀번호 찾기</h1>
-    <form action="#" method="post" autocomplete="off">
-      <div class="int-area">
-        <label for="username">이름</label>
-        <input type="text" id="username" name="username" class="username" placeholder="이름을 입력해주세요." required>
+  <header>
+    <nav>
+      <div class="nav-wrap">
+        <ul>
+          <li>메뉴</li>
+          <li>이벤트</li>
+          <li>매장</li>
+        </ul>
+        <div id="logo">
+          <h1>로고 들어갈 곳</h1>
+        </div>
+        <ul>
+          <li>회원가입</li>
+          <li>로그인</li>
+          <div><img src="./images/cart.png" alt=""></div>
+          <div><img src="./images/person.png" alt=""></div>
+        </ul>
       </div>
-      <div class="int-area">
-        <label for="userid">아이디</label>
-        <input type="email" id="userid" name="userid" class="userid" placeholder="이메일(ID)를 입력해주세요"> 
+    </nav>
+  </header>
+  <main>
+      <div class="container">
+        <section class="create-form">
+          <h1>비밀번호 찾기</h1>
+          <form action="#" method="post" autocomplete="off">
+            <div class="int-area">
+              <label for="username">이름</label>
+              <input type="text" id="username" name="username" class="username" placeholder="이름을 입력해주세요." required>
+            <div class="int-area">
+              <label for="userid">아이디</label>
+              <input type="email" id="userid" name="userid" class="userid" placeholder="이메일(ID)를 입력해주세요"> 
+            </div>
+            <div class="int-area">
+              <label for="userid">이메일 </label>
+              <input type="email" id="userid" name="userid" class="userid" placeholder="이메일(ID)를 입력해주세요"> 
+            </div>
+            <div class="btn-area">
+              <button type="submit" id="verification">비밀번호 찾기</button>
+            </div>
+          </form>
+        </section>
       </div>
-      <div class="int-area">
-        <label for="userid">이메일 </label>
-        <input type="email" id="userid" name="userid" class="userid" placeholder="이메일(ID)를 입력해주세요"> 
-      </div>
-      <div class="btn-area">
-        <button type="submit" id="verification">비밀번호 찾기</button>
-      </div>
-    </form>
-  </section>
+  </main>
 </body>
 </html>
