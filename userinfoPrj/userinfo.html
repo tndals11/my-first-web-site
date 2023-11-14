@@ -18,6 +18,12 @@
     body {
       font-family: 'Noto Sans KR', sans-serif;
     }
+    a {
+      text-decoration: none;
+    }
+    li {
+      color: black;
+    }
     /* 헤더/ 상단메뉴 스타일 시작 */
 nav {
   border: 0;
@@ -158,15 +164,18 @@ nav {
     width: 50%;
     margin-left: 50%;
     transform: translate(-50%);
+    background-color: #cf152d;
+    color: white;
     padding: 4px 0;
-    background-color: transparent;
     border: 0;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
   }
-
+  .box button:hover {
+    opacity: 0.8;
+  }
 
   /* footer 스타일 시작 */
 footer {
