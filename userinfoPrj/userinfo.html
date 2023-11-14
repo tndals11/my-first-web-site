@@ -75,8 +75,6 @@ nav {
   margin-right: 50px;
 }
 
-
-
   /* 메인 영역 */
   .main-container {
     width: 1280px;
@@ -87,40 +85,88 @@ nav {
   }
   .content-wrap {
     width: 100%;
-    height: 50%;
   }
   .content1 {
     width: 300px;
-    height: 150px;
     padding: 10px 15px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 100px;
+  }
+  .content1 h1 {
+    font-size: 34px;
+  }
+  .content1 p {
+    font-size: 30px;
+    margin-top: 50px
   }
   .content2 {
     width: 300px;
-    height: 150px;
-    padding: 0px 15px;
+    height: 150px;  
     font-size: 25px;
     margin: 0 auto;
     text-align: center;
   }
   .content3 {
-    width: 100%;
+    width: 1280px;
+    height: 230px;
+    box-shadow:0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    
   }
   .content3 ul {
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgba(90, 89, 91, 0.2);
+    padding: 15px 0px;
+    border-radius: 15px;
   }
   .content3 ul li {
-    padding: 5px 15px;
-    background-color: white;
-    border-radius: 10px;
-    color: black;
-    margin-bottom: 30px;
-    border: 0;
-    border: 1px solid black;
+    width: 256px;
+    height: 200px;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-right: 1px solid #e7e7e7;
+    text-align: center;
+    position: relative;
   }
+  /* 밑줄 가상요소 */
+  .content3 ul li::after { 
+    content: '';
+    display: block;
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    top: 53px;
+    left: 64px;
+    background-color: #cf152d;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+  }
+  .box span {
+    margin-bottom: 25px;
+  }
+  .box img {
+    object-fit: cover;
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 64px;
+  }
+  .box button {
+    margin-top: 25px;
+    width: 50%;
+    margin-left: 50%;
+    transform: translate(-50%);
+    padding: 4px 0;
+    background-color: transparent;
+    border: 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+  }
+
 
   /* footer 스타일 시작 */
 footer {
@@ -190,25 +236,43 @@ footer {
         <div class="content-wrap">
           <div class="content1">
             <h1>마이페이지</h1>
-          </div>
-          <div class="content2">
             <p><strong>홍길동</strong>님 안녕하세요.</p>
           </div>
           <div class="content3">
-            <ul>
-              <li>주문내역</li>
-              <li>1:1문의</li>
-              <li>내 정보 수정</li>
-              <li>비밀번호 재설정</li>
-              <li>로그아웃</li>
-            </ul>
+              <ul>
+                  <li class="box">
+                   <span>주문내역</span> 
+                   <img  src="./images/icon.png" alt="">
+                    <button>주문내역</button>
+                  </li>
+                  <li class="box">
+                    <span>1:1문의</span> 
+                    <img  src="./images/icon2.png" alt="">
+                     <button>1:1문의</button>
+                   </li>
+                   <li class="box">
+                    <span>내 정보 수정</span> 
+                    <img  src="./images/icon3.png" alt="">
+                     <button>내 정보 수정</button>
+                   </li>
+                   <li class="box">
+                    <span>비밀번호 재설정</span> 
+                    <img  src="./images/icon4.png" alt="">
+                     <button>비밀번호 설정</button>
+                   </li>
+                   <li class="box">
+                    <span>로그아웃</span> 
+                    <img  src="./images/icon5.png" alt="">
+                     <button>로그아웃</button>
+                   </li>
+              </ul>
           </div>
         </div>
       </div>
-    </div>   
+    </div>
   </main>
+
   <!-- footer 영역 -->
-  
   <footer>
     <div class="footer-wrap">
       <div class="footer-top">
