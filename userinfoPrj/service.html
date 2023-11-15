@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* 헤더/ 상단메뉴 스타일 시작 */
+nav {
+  border: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 5px 0 rgba(90, 91, 95, 0.4);
+  position: fixed;
+  background-color: white;
+}
+.nav-wrap {
+  background-color: white;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 20px 0;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-wrap #logo {
+  font-size: 23px;
+  height: 50px;
+} 
+.nav-wrap #logo img {
+  width: 100%;
+  height: 150px;
+  margin-top: -30px;
+}
+.nav-wrap ul {
+  display: flex;
+  margin-top: 17px;
+}
+.nav-wrap ul li {
+  list-style: none;
+  font-size: 23px;
+  padding: 6px 22px;
+}
+.nav-wrap ul li:hover {
+  cursor: pointer;
+  background-color: #cf152d;
+  color: white;
+  border-radius: 30px;
+}
+.nav-wrap ul div {
+  margin-right: 30px;
+}
+.nav-wrap ul div img {
+  width: 100%;
+  height: 40px;
+  object-fit: cover;
+}
+.nav-wrap ul div img:hover {
+  cursor: pointer;
+}
+.nav-wrap ul li:nth-child(-n+3) {
+  margin-right: 50px;
+}
+/* 메인영역 */
+.container {
+  width: 100%;
+  padding-top: 140px;
+} 
+.content-wrap {
+  width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+.content {
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  align-items: center;
+  }
+  .content h1 {
+    font-size: 34px;
+    padding: 60px;
+  }
+  .content h4 {
+    font-size: 30px;
+    margin: 30px;
+  }
+  .content2-wrap {
+    width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 2fr ;
+  }
+  .item {
+    text-align: start;
+    font-size: 24px;
+    margin: 20px 20px;
+  }
+  .item p {
+    margin-bottom: 20px;
+  }
+  
+
+  </style>
+</head>
+<body>
+  <!-- 헤더영역 -->
+<header>
+  <nav>
+    <div class="nav-wrap">
+      <ul>
+        <a href="#"><li>메뉴</li></a>
+        <a href="#"><li>이벤트</li></a>
+        <a href="#"><li>매장</li></a>
+      </ul>
+      <div id="logo">
+       <a href="./"><img src="./images/logo.PNG" alt=""></a>
+      </div>
+      <ul>
+        <a href="./create_user.html"><li>회원가입</li></a>
+        <a href="./login.html"><li>로그인</li></a>
+        <div><img src="./images/cart.png" alt=""></div>
+        <div><img src="./images/person.png" alt=""></div>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <!-- 메인영역 -->
+<main>
+  <div class="container">
+    <div class="content-wrap">
+      <div class="content">
+        <h1>고객센터</h1>
+        <h4>1:1문의</h4>
+      </div>
+    </div>
+    <div class="content2-wrap">
+      <div class="item">
+        <p>회원정보</p>
+      </div>
+      <div class="item">
+        <p>홍길동</p>
+        <p>honggildong1234@naver.com</p>
+        <p>2002-02-01</p>
+      </div>
+      <div class="item">
+        <p>문의유형</p>
+      </div>
+      <div class="item">
+        <!-- form name =>script를 처리할때 사용 -->
+        <!-- option의 값을 처리할때 쓰는 form -->
+        <!-- 모든 form 영역은 다시 보기!!!! -->
+        <form action="" name="frm">
+          <select name="" id="">
+            <option value="">회원문의</option>
+            <option value="">포인트문의</option>
+            <option value="">기타</option>
+          </select>
+        </form>
+      </div>
+      <div class="item">
+        <p>주문번호</p>
+      </div>    
+      <div class="item">
+          <input type="button" value="주문 내역 선택"> <!-- toggle처리로 화면 따로 띄우기 -->
+      </div>
+      <div class="item">
+        <p>문의내용</p>
+      </div>
+      <div class="item">
+        <!-- 텍스트 내용을 보낼 form-->
+        <form action="#" method="post">
+          <label for="text-title"></label>
+          <input type="text" placeholder="제목을 입력해주세요." name="text-title" class="text-title">
+          </form>
+      </div>
+      <div class="item">
+        <p></p>
+      </div>
+      <div class="item">
+       <!-- text 내용을 보낼 form  -->
+        <form action="" method="post">
+          <label for="text-body"></label>
+          <input type="text" placeholder="내용을 입력해주세요" name="text-body" class="text-body">
+        </form>
+      </div>
+      <div class="item">
+        <p>첨부파일</p>
+      </div>
+      <div class="item">
+        <!-- file을 보낼 form 꼭 한번 더 보고 수정하기 -->
+        <form action="" method="post">
+          <label for="upload-file"></label>
+          <input type="file" name="upload-file" class="upload-file">
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
