@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" name="frm">
+    <fieldset>
+      <legend>회원가입</legend>
+      <ul>
+        <li>
+          <label for="email">이메일</label>
+          <input type="text" id="email" class="email">
+        </li>
+        <li>
+          <label for="passwd">비밀번호</label>
+          <input type="password" id="passwd">
+        </li>
+        <li>
+          <label for="grade">접속등급</label>
+          <!-- 둘중 하나만 선택하고 싶으면 이름이 동일해야한다-->
+          <!-- value의 값을 통해서 구분한다 -->
+          <input type="radio" name="grade" id="grade" value="Member" checked>회원
+          <input type="radio" name="grade" id="grade" value="Guest">비회원
+        </li>
+        <li>
+          <!-- submit => 엔터 or 클릭 -->
+          <button type="submit" class="btn">회원가입</button>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+  <script>
+    // let => 변수
+    let btn = document.querySelector(".btn");
+    // 클릭했을시 클래스 email을 가지고 오는 의미
+    let email = document.querySelector(".email");
+    
+    // onclick 버튼을 누르면 
+    btn.onclick = function (e) {
+      // 버튼 속성이 가지고 있는 다음으로 넘어가려는 속성을 제거
+      e.preventDefault();
+      // 조건문 버튼을 눌렀을시 email안의 값이 있는지 확인
+      // if( email.value == "") {
+      //   alert("이메일을 입력해주세요.");
+      //   email.focus();
+      //   // 아직 안 끝났으니 false 
+      //   return false;
+      // }
+      // if( email.value.length < 5) {
+      //   alert("이메일 형식이 너무 짧습니다.\n다시 입력해 주세요.");
+      //   email.value = "";
+      //   email.focus();
+      //   return false;
+      // }
+      // let grade = document.frm.grade[1].value;
+      // console.log(grade);
+      console.log(document.frm.grade.length);
+      let frm = document.frm;
+
+      for(let i = 0; i < frm.grade.length; i++) {
+        // console.log( frm.grade[i].value );
+        // console.log(frm.grade[i].checked);
+        if( frm.grade[i].checked) { // true
+          // console.log(frm.grade[i].value + "가 선택되었습니다.");
+          console.log(`${frm.grade[i].value}가 선택되었습니다.`)
+        }
+      }
+    };
+    
+
+      let grade = document.querySelector("input[name='grade']");
+      console.log(grade.length);
+  </script>
+</body>
+</html>

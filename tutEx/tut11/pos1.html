@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relative 상대좌표(기준값을 바꿀 수 있다)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .wrap {
+      background-color: red;
+      width: 200px;
+      height: 200px;
+
+      /* 포지션을 중간으로 옮기기 위해서는 */
+      /* top 50%, left 50%를주고 */
+      /* transform: translate(-50%, -50%)를 주어야한다 */
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .box {
+      background-color: blue;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      top: 50px;
+      left: 80px;
+    }
+  </style>
+</head>
+<body>
+  <!-- position을 이용해서 박스에 색깔 채우기 -->
+  <div class="wrap">
+    <div class="box">
+      Relative
+    </div>
+  </div>
+</body>
+</html>
