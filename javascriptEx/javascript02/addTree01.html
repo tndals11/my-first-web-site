@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>BackEnd Programming</h1>
+  <p>HTML/CSS/JAVASCRIPT</p>
+  <P>Database</P>
+  <p>Spring Framwork</p>
+
+  <script>
+    // 노드 트리 만들기
+    // 1. createElement()로 태그 만들어 주기 ex) <p></p> 태그 생성
+    // 2. createTextNode()로 텍스트 만들기
+    // 3. 1 + 2번 연결하기 : app
+    // 4. 배치하기
+    // ex) <p>Spring Framework</p>
+
+  // createElement()로 태그 만들어 주기 ex) <p></p> 태그 생성
+  let addTag = document.createElement("p");
+
+  // createTextNode()로 텍스트 만들기 
+  let addText = document.createTextNode("Spring Framwork");  
+  
+  // 1 + 2번 연결하기 : app
+  addTag.appendChild(addText);
+  
+  // body에 추가하기
+  document.body.appendChild(addTag);
+  </script>
+</body>
+</html>

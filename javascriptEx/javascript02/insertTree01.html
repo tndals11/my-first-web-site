@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>BackEnd Programming</h1>
+  <p>HTML/CSS/JS</p>
+  
+  <p>Spring Boot</p>
+<!-- <p>Database</p> -->
+
+  <button>제목 제거하기</button>
+  <script>
+    // document.querySelectorAll() => 같은 태그를 배열
+    // let basicTag = document.querySelector("p");
+
+    // let addTag = document.createElement("p"); => <p>태그를 생성
+    // let addText = document.createTextNode("Database"); => Text(Database)를 입력
+    // // appendChild => addTag의 자식으로 넣는다는 뜻
+    // addTag.appendChild(addText);
+
+    // // body구문에 기준점 앞쪽에 집어넣을게(insertBefore)
+    // // 기준점 => addTag 
+    // document.body.insertBefore(addTag, basicTag);
+
+    document.querySelector("button").addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector("h1").remove();
+    });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="items">
+    <li>HTML/CSS/JAVASCRIPT</li>
+    <li>Database</li>
+  </ul>
+  <form action="">
+    <input type="text" class="content">
+    <button>원하는 위치에 추가</button>
+  </form>
+
+
+  <script>
+    // 노드 트리 만들기
+    // 1. createElement()로 태그 만들어 주기 ex) <p></p> 태그 생성
+    // 2. createTextNode()로 텍스트 만들기
+    // 3. 1 + 2번 연결하기 : append
+    // 4. 배치하기
+
+    // ex) <li>글자</li>
+
+  document.querySelector("button").addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let addTag = document.createElement("li");
+    let content = document.querySelector(".content");
+    let addText = document.createTextNode(content.value);
+    addTag.appendChild(addText); // 1+2 연결
+
+    if( !content.value ) {
+      alert("추가할 데이터를 입력하세요");
+      content.focus();
+      return false;
+    } else {
+      content.value = "";
+      document.querySelector("ul#items").appendChild(addTag);
+    }
+
+  
+  });
+
+  </script>
+
+</body>
+</html>

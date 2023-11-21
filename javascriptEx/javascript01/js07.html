@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 500px;
+    }
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="./images/1.jpg" alt="노을진 석양 너무사진">
+  </div>
+  
+  <button>이미지 바꾸기</button>
+  
+  <script>
+    let img = document.querySelector(".box img");
+    let btn = document.querySelector("button");
+
+    function changImg() {
+      // 바꿀려는 img안에 src를 = images/2.jpg로 바꾸겠다 선언
+      img.src = "images/2.jpg";
+    }
+
+    // 이벤트 onclick 클릭했을때 실행
+    btn.onclick = changImg;
+
+
+  </script> 
+</body>
+</html>

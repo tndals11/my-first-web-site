@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+  <style>
+    /* p {
+      /* 숨기기 */
+      /* 2가지 방법 2개는 디자인 적으로 다르다 */
+      /* p자체를 없애 버리는것은 => display: none  */
+      /* 보이게할 때는 display: block */
+      /* 안보이게 하는 것은 display : none */
+      /* display: block; */
+      
+      /* p태그만 숨기기만 하는 것은 => visibility: hidden */
+      /* visibility: hidden; */ 
+  </style>
+</head>
+<body>
+  <h1>코리아아이티 아카데미</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, porro!</p>
+  <button class="Hide">Hide</button>
+  <button class="Show">Show</button>
+
+  <script>
+    //  document => html에서
+    //  querySelector => 선택을할게요
+    //  클래스를 가져오므로 .을 붙여야한다 ex).Hide
+    //  개체를 불러오고 -> 동작
+    // let pr = document.querySelector("p");
+    // let btn1 = document.querySelector(".Hide");
+    // let btn2 = document.querySelector(".Show");
+    
+    //동작
+    // function hide() {
+    //   // console.log => console에 찍힌다 
+    //   // alert => 화면에 문구를 보여준다
+
+    //   // pr문구에 style을 지정 disaply = "none"; 숨기기 
+    //   pr.style.display = "none";
+    // }
+    
+    // function show() {
+    //   pr.style.display = "block";
+    // }
+    // // 이벤트 뒤에는 소괄호() x
+    // // button을 클릭했을경우 실행
+    // btn1.onclick = hide;
+    // btn2.onclick = show;
+    let pr = document.querySelector("p");
+    let btn1 = document.querySelector(".Hide");
+    let btn2 = document.querySelector(".Show");
+
+    function hide()  {
+      pr.style.display = "none";
+    }
+    // .addEventListener 이벤트와 동작을 같이
+    //  .addEventListener  동작에 소괄호()가 붙지않는다.
+    btn1.addEventListener('click', hide);
+
+    function show()  {
+      pr.style.display = "block";
+    }
+    btn2.addEventListener('click', show);
+  </script>
+</body>
+</html>

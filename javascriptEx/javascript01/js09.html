@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList.add()</title>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>코리아아이티 아카데미</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, possimus!</p>
+  <button>보이다 숨기기</button>
+
+<script>
+  function add() {
+    // 숨기고 싶은 부분이 p이기때문에 .hide라는 클래스를 붙여준다
+    // 쿼리문안에 "p" 선택 .classList 앞에 .이 붙기 때문에 클래스이름에 .을 빼준다
+    document.querySelector("p").classList.add("hide");
+  }
+  document.querySelector("button").onclick = add;
+</script>
+</body>
+</html>

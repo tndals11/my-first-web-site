@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <input type="text" class="content">
+    <button id="btn">Add Node Text</button>
+  </form>
+
+  <h1>Add NodeText List</h1>
+  <p>HTML/CSS/JAVASCRIPT</p>
+  <P>Database</P>
+
+  <script>
+    // 노드 트리 만들기
+    // 1. createElement()로 태그 만들어 주기 ex) <p></p> 태그 생성
+    // 2. createTextNode()로 텍스트 만들기
+    // 3. 1 + 2번 연결하기 : append
+    // 4. 배치하기
+
+    // ex) <p>폼 입력 텍스트</p>
+
+    document.querySelector("#btn").addEventListener('click', (e) => {
+      e.preventDefault();
+
+
+
+      let addTag = document.createElement("p");
+
+      let el = document.querySelector(".content");
+
+      // input class이름 content의 값을 들고온다 
+      let val = document.querySelector(".content").value;
+      
+      // input class이름 content의 값을 가져와
+      //  createTextNode val의 값을 텍스트로 만들어준다
+      let addText = document.createTextNode(val);
+
+
+      // if( el.value == "" ) {
+      //   alert("추가할 데이터를 입력하세요.");
+      //   el.focus();
+      //   return false;
+      // } else {
+      //   el.value = "";
+      //   addTag.appendChild(addText);
+      //   document.body.appendChild(addTag);
+      // }
+
+
+
+      // appenChild => p태그에 자식요소로 값을 넣는다는 뜻
+      addTag.appendChild(addText);
+
+      document.body.appendChild(addTag);
+
+    });
+
+
+
+  </script>
+</body>
+</html>

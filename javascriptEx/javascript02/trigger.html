@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트리거(bar menu, hamburg menu)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #bars {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+
+      background-color: #639;
+      padding: 8px 12px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+    }
+    #menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #639;
+      /* 반응형 처리를 할려면 vh를 붙여줘야한다 */
+      /* vh => viewheight */
+      height: 100vh;
+      padding: 10px 10px;
+
+
+      /* position에서는 display: none이 안먹힌다 */
+      /* 자신의 크기 만큼 브라우저 밖으로 나가있다 */
+      transform: translateX(100%);
+    }
+    /* a태그가 붙었을때는 a태그쪽에에 컬러를 넣어줘야한다 */
+    #menu a {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    #menu ul li {
+      list-style: none;
+      margin-bottom: 10px;
+
+    }
+    #menu.active {
+      transform: translateX(0);
+    } 
+  </style>
+</head>
+<body>
+  <!-- unicode &#9776; -->
+  <button id="bars">&#9776</button>
+  <nav id="menu">
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Company</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    let bars = document.querySelector("#bars");
+    let menu = document.querySelector("#menu");
+
+    bars.addEventListener('click', () => {
+
+      menu.classList.toggle("active");
+
+    });
+
+
+  </script>
+</body>
+</html>

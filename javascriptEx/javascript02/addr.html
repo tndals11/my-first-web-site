@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      list-style: none;
+    }
+    .container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    table {
+      /* border 선 초기화 */
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    th:nth-child(1) {
+      width: 30%;
+    }
+    th:nth-child(2) {
+      width: 70%;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>코리아아이티 주소록</h1>
+    <form>
+      <ul>
+        <li>
+          <label>이름</label>
+          <input type="text" id="username">
+        </li>
+        <li>
+          <label>주소</label>
+          <input type="text" id="address">
+        </li>
+      </ul>
+      <button>주소 등록하기</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>주소</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody> <!-- 여기에 출력 -->
+    </table>
+  </div>
+
+  <script>
+    let name = document.querySelector("#username");
+    let addr = document.querySelector("#address");
+    let btn = document.querySelector("button");
+    // <tr>
+    //   <td>홍길동</td>
+    //   <td>부산광역시</td>
+    // </tr>
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+    let addrTr = document.createElement("tr");
+    let addrTdName = document.createElement("td");
+    let addrTdAddr = document.createElement("td");
+
+    let valTdName = document.createTextNode(name.value);
+    let valTdAddr = document.createTextNode(addr.value);
+
+    addrTdName.appendChild(valTdName);
+    addrTdAddr.appendChild(valTdAddr);
+      
+    addrTr.appendChild(addrTdName);
+    addrTr.appendChild(addrTdAddr);
+
+    
+
+    name.value = "";
+    addr.value = "";
+    document.querySelector("tbody").appendChild(addrTr);
+    });
+  
+  </script>
+</body>
+</html>
