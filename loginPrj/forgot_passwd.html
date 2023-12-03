@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrap">
+        <ul>
+          <li>메뉴</li>
+          <li>이벤트</li>
+          <li>매장</li>
+        </ul>
+        <div id="logo">
+          <h1>로고 들어갈 곳</h1>
+        </div>
+        <ul>
+          <li>회원가입</li>
+          <li>로그인</li>
+          <div><img src="./images/cart.png" alt=""></div>
+          <div><img src="./images/person.png" alt=""></div>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="main-wrap">
+      <h1>비밀번호 찾기</h1>
+        <form action="#" method="post" autocapitalize="off">
+          <div class="int-area">
+            <label for="userid">아이디</label>
+            <input type="text"  id="userid" name="userid" required placeholder="아이디를 입력해주세요">
+          </div>
+          <div class="int-area">
+            <label for="userEmail">이메일</label>
+            <input type="email" id="userEmail" name="userEmail" required placeholder="이메일을 입력해주세요.">
+          </div>
+          <div class="int-area">
+            <label for="check_email">이메일 확인</label>
+            <input type="email" id="check_email" name="check_email" required placeholder="이메일을 입력해주세요.">
+          </div>
+          <div class="btn-area">
+            <button type="submit" id="btn">비밀번호 찾기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script>
+     let userid = document.querySelector("#userid");
+    let useremail = document.querySelector("#userEmail");
+    let check_email = document.querySelector("#check_email");
+    let btn = document.querySelector("#btn");
+
+    btn.addEventListener('click', (e) => {
+       e.preventDefault();
+
+      if (userid.value == "") {
+        alert("아이디를 입력해주세요");
+        userid.value = "";
+        userid.focus();
+        return false;
+      }
+
+      if (useremail.value == "") {
+        alert("이메일을 입력해주세요");
+        useremail.value = "";
+        useremail.focus();
+        return false;
+      }
+
+      if (check_email.value == "") {
+        alert("이메일을 입력해주세요");
+        check_email.value = "";
+        check_email.focus();
+        return false;
+      }
+
+      
+    });
+  </script>
+</body>
+</html>

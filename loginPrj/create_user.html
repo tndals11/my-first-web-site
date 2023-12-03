@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  .hide {
+    display: none;
+  }
+  .success-msg,
+  .successpw-msg,
+  .successpw-msg2,
+  .success-email-msg {
+    color: green;
+  }
+  .fail-msg1,
+  .fail-msg2,
+  .fail-msg3,
+  .mismatch-msg,
+  .strong-msg,
+  .fail-email-msg {
+    color: red;
+  }
+</style>
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrap">
+        <ul>
+          <li>메뉴</li>
+          <li>이벤트</li>
+          <li>매장</li>
+        </ul>
+        <div id="logo">
+          <h1>로고 들어갈 곳</h1>
+        </div>
+        <ul>
+          <li>회원가입</li>
+          <li>로그인</li>
+          <div><img src="./images/cart.png" alt=""></div>
+          <div><img src="./images/person.png" alt=""></div>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="main-wrap">
+        <h1>회원가입</h1>
+        <form action="#" method="post" autocomplete="off" id="frmtest">
+          <div class="int-area">
+            <label for="userid">아이디</label>
+            <input type="text" id="userid" name="userid" class="userid" placeholder="아이디를 입력해주세요.">
+            <div class="success-msg hide ">사용할 수 있는 아이디입니다.</div>
+            <div class="fail-msg1 hide ">아이디는 4~12글자이어야 합니다.</div>
+            <div class="fail-msg2 hide ">영어 또는 숫자만 가능합니다.</div>
+            <div class="fail-msg3 hide ">중복된 아이디 입니다.</div>
+          </div>
+
+          <div class="int-area">
+            <label for="userEmail">이메일(ID)</label>
+            <input type="text" id="userEmail" name="userEmail" class="userEmail" placeholder="이메일(ID)를 입력해주세요.">
+            <div class="success-email-msg hide">사용할 수 있는 이메일입니다</div>
+            <div class="fail-email-msg hide">이메일 형식에 맞지않습니다.</div>
+          </div>
+
+          <div class="int-area">
+            <label for="userName">이름</label>
+            <input type="text" id="userName" name="userName" class="userName" placeholder="이름을 입력해주세요.">
+          </div>
+
+          <div class="int-area">
+            <label for="passwd">비밀번호</label>
+            <input type="password" id="passwd" name="passwd" class="passwd" placeholder="비밀번호(8자이상 + 영문 + 숫자)">
+            <div class="strong-msg hide">8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요</div>
+            <div class="successpw-msg hide">사용가능한 비밀번호입니다</div>
+          </div>
+
+          <div class="int-area">
+            <label for="check_passwd">비밀번호 확인</label>
+            <input type="password" id="check_passwd" name="check_passwd" class="check_passwd" placeholder="비밀번호 확인">
+            <div class="mismatch-msg hide">비밀번호가 일치하지 않습니다</div>
+            <div class="successpw-msg2 hide">일치한 비밀번호입니다</div>
+          </div>
+          <div class="btn-area">
+            <button type="submit" id="btn">회원가입</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script>
+    let userid = document.querySelector(".userid");
+    let useremail = document.querySelector(".userEmail");
+    let userName = document.querySelector(".userName");
+    let password = document.querySelector(".passwd");
+    let check_passwd = document.querySelector(".check_passwd");
+    let btn = document.querySelector("#btn");
+
+    btn.addEventListener('click', (e) => {
+       e.preventDefault();
+
+      if (userid.value == "") {
+        alert("아이디를 입력해주세요");
+        userid.value = "";
+        userid.focus();
+        return false;
+      }
+
+      if (useremail.value == "") {
+        alert("이메일을 입력해주세요");
+        useremail.value = "";
+        useremail.focus();
+        return false;
+      }
+
+      if (userName.value == "") {
+        alert("이름을 입력해주세요");
+        userName.value = "";
+        userName.focus();
+        return false;
+      }
+
+      if (password.value == "") {
+        alert("비밀번호를 입력해주세요");
+        password.value = "";
+        password.focus();
+        return false;
+      }
+      if (check_passwd.value == "") {
+        alert("비밀번호를 입력해주세요");
+        check_passwd.value = "";
+        check_passwd.focus();
+        return false;
+      }
+    });
+
+
+
+
+    let inputUserid = document.querySelector('.userid'); 
+    let successMessage = document.querySelector('.success-msg');
+    let failMessage = document.querySelector('.fail-msg1'); 
+    let failMessageTwo = document.querySelector('.fail-msg2'); 
+    let failMessage3 = document.querySelector('.fail-msg3'); 
+
+    function idLength(value) {
+      return value.length >= 4 && value.length <= 12
+    }
+    function onlyNumberAndEnglish(str) {
+      return /^[A-Za-z0-9][A-Za-z0-9]*$/.test(str);
+    } 
+
+    inputUserid.onkeyup = function(){
+      if (inputUserid.value.Length !== 0) {
+
+        if(onlyNumberAndEnglish(inputUserid.value) === false) {
+          successMessage.classList.add('hide');
+          failMessage.classList.add('hide');
+          failMessageTwo.classList.remove('hide');
+        } else if (idLength(inputUserid.value) === false) {
+          successMessage.classList.add('hide');
+          failMessage.classList.remove('hide');
+          failMessageTwo.classList.add('hide');
+        } else if ( onlyNumberAndEnglish (inputUserid.value) || idLength(inputUserid.value) ) {
+          successMessage.classList.remove('hide');
+          failMessage.classList.add('hide');
+          failMessageTwo.classList.add('hide');
+        } else {
+          successMessage.classList.add('hide');
+          failMessage.classList.add('hide');
+          failMessageTwo.classList.add('hide');
+        }
+      }
+
+    }
+
+    
+    // 이메일 검사 
+    function EmailCheck (str) {
+    return /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/.test(str);
+  }   
+    let userEmail = document.querySelector('#userEmail');
+    let successEmailMsg = document.querySelector('.success-email-msg');
+    let failEmailMsg = document.querySelector('.fail-email-msg');
+    
+    userEmail.onkeyup = function () {
+      if ( userEmail.value.length !== 0) {
+        
+          if( EmailCheck(userEmail.value) ) {
+          successEmailMsg.classList.remove('hide');
+          failEmailMsg.classList.add('hide');
+        
+        } else {
+          successEmailMsg.classList.add('hide');
+          failEmailMsg.classList.remove('hide');
+        }
+      } else {
+        successEmailMsg.classList.add('hide');
+        failEmailMsg.classList.add('hide');
+      }
+    };
+
+
+    let elInputPassword = document.querySelector('#passwd'); // input#password
+    let elInputPasswordRetype = document.querySelector('#check_passwd'); // input#password-retype
+    let elMismatchMessage = document.querySelector('.mismatch-msg'); // div.mismatch-message.hide
+    let elStrongPasswordMessage = document.querySelector('.strong-msg');
+    let elSuccessMessage = document.querySelector('.successpw-msg');
+    let elSuccessMessage2 = document.querySelector('.successpw-msg2');
+  // 비밀번호 유효성 검사
+  function strongPassword (str) {
+    return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(str);
+  }     
+  function isMatch (password1, password2) {
+    return password1 === password2;
+  }
+    
+  // 특수문자를 사용했을경우 
+  elInputPassword.onkeyup = function () {
+ 
+  if (elInputPassword.value.length !== 0) {
+    
+    if(strongPassword(elInputPassword.value)) {
+      elStrongPasswordMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+      elSuccessMessage.classList.remove('hide');
+    }
+    else {
+      elStrongPasswordMessage.classList.remove('hide'); // 실패 메시지가 보여야 함
+      elSuccessMessage.classList.add('hide');
+    }
+  }
+  else {
+    elStrongPasswordMessage.classList.add('hide');
+    elSuccessMessage.classList.add('hide');
+  }
+  };
+
+  // 비밀번호 동일한지 검사
+  elInputPasswordRetype.onkeyup = function () {
+
+  // console.log(elInputPasswordRetype.value);
+  if (elInputPasswordRetype.value.length !== 0) {
+    if(isMatch(elInputPassword.value, elInputPasswordRetype.value)) {
+      elMismatchMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+      elSuccessMessage2.classList.remove('hide');
+    }
+    else {
+      elMismatchMessage.classList.remove('hide'); // 실패 메시지가 보여야 함
+      elSuccessMessage2.classList.add('hide');
+
+    }
+  }
+  else {
+    elMismatchMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+    elSuccessMessage2.classList.add('hide');
+  }
+  };
+   
+
+  </script>
+</body>

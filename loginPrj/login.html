@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrap">
+        <ul>
+          <li>메뉴</li>
+          <li>이벤트</li>
+          <li>매장</li>
+        </ul>
+        <div id="logo">
+          <h1>로고</h1>
+        </div>
+        <ul>
+          <li>회원가입</li>
+          <li>로그인</li>
+          <div><img src="./images/cart.png" alt=""></div>
+          <div><img src="./images/person.png" alt=""></div>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+      <div class="container">
+        <div class="main-wrap">
+        <h1>로그인</h1>
+        <p>반갑습니다. <br>로그인하고 더 큰 혜택을 즐기세요</p>
+          <form action="#" method="post" autocapitalize="off">
+            <div class="int-area">
+              <label for="userid">아이디</label>
+              <input type="text"  id="userid" name="userid" required placeholder="아이디를 입력해주세요">
+            </div>
+            <div class="int-area">
+              <label for="passwd">비밀번호 찾기</label>
+              <input type="password" id="passwd" name="passwd" required placeholder="비밀번호를 입력해주세요.">
+            </div>
+            <div class="btn-area">
+              <button type="submit" id="btn">로그인</button>
+            </div>
+            <div class="caption-wrap">
+              <div class="caption">
+                <ul>
+                  <!-- forgot_id.html 아이디찾기 페이지 -->
+                  <li><a href="forgot_id.html">아이디</a></li>
+                  <span>|</span>
+                  <!-- forgot_passwd.html 비밀번호찾기 페이지 -->
+                  <li><a href="forgot_passwd.html">비밀번호</a></li>
+                  <span>|</span>  
+                  <!-- create_user.html 회원가입 페이지 -->
+                  <li><a href="create_user.html">회원가입</a></li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+  </main>
+  <script>
+    let userid = document.querySelector("#userid");
+    let password = document.querySelector("#passwd");
+    let btn = document.querySelector("#btn");
+
+    btn.addEventListener('click', (e) => {
+       e.preventDefault();
+
+      if (userid.value == "") {
+        alert("아이디를 입력해주세요");
+        userid.value = "";
+        userid.focus();
+        return false;
+      }
+
+      if (password.value == "") {
+        alert("비밀번호를 입력해주세요");
+        password.value = "";
+        password.focus();
+        return false;
+      }
+      
+    });
+  </script>
+</body>
+</html>
