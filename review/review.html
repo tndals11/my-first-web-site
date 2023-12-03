@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
     * {
@@ -67,14 +68,11 @@
       text-shadow: 0 0 0 #f0f0f0;
       letter-spacing: 3px;
   }
-  #myform label:hover{
-      text-shadow: 0 0 0 #cf152d;
-  }
-  #myform label:hover ~ label{
-      text-shadow: 0 0 0 #cf152d ;
-  }
   #myform input[type=radio]:checked ~ label{
       text-shadow: 0 0 0 #cf152d;
+  }
+  #myform input[type=radio]:checked ~ label:hover {
+    text-shadow: 0 0 0 #cf152d;
   }
   #reviewContents {
     width: 100%;
@@ -157,5 +155,11 @@
       </div>
     </div>
   </div>
+  <script>
+    $('#reviewStar').click(function() {
+      
+
+    });
+  </script>
 </body>
 </html>
