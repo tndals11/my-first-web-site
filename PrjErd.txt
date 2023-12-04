@@ -1,0 +1,63 @@
+사용자
+create table users {
+user_num int NOT NULL AUTO_INCREMENT,
+user_id varchar(20) NOT NULL,  
+user_pw text NOT NULL, 
+user_email varchar(100) NOT NULL,
+user_name varchar(20) NOT NULL,
+user_regdate date,
+PRIMARY KEY(user_id)       
+}
+
+주문
+create table orders{
+order_num varchar(15) NOT NULL AUTO_INCREMENT, -> primary key 
+order_total INT NOT NULL,
+final_cost INT NOT NULL,
+comments TEXT,
+order_date DATE NOT NULL,
+order_status varchar(20) NOT NULL,
+PRIMARY KEY(order_num),
+user_id_fk varchar(20) NOT NULL, ----------------------> FK key  
+FOREIGN KEY(user_id_fk) references users(user_id)
+};
+
+주문내역 
+create table orderList{
+order_num_fk varchar(15) NOT NULL AUTO_INCREMENT,
+item_id_fk INT NOT NULL AUTO_INCREMENT,
+item_cnt INT NOT NULL,
+FOREIGN KEY(order_num_fk) references orders(order_num),   ------------------> FK KEY
+FOREIGN KEY(item_id_fk) references items(item_id) ---------------> FK KEY 
+};
+
+상품목록 
+create table items {
+item_id INT NOT NULL AUTO_INCREMENT,
+item_name VARCHAR(20) NOT NULL,
+item_intro TEXT NOT NULL,
+item_price INT NOT NULL,
+PRIMARY KEY(item_id)              -> PK KEY
+};
+
+장바구니 
+create table cart{
+user_id_fk varchar(20) NOT NULL,
+item_id_fk INT NOT NULL AUTO_INCREMENT,
+item_cnt INT NOT NULL,
+FOREIGN KEY(user_id_fk) references users(user_id),   ------------------> FK KEY
+FOREIGN KEY(item_id_fk) references items(item_id) ---------------> FK KEY 
+};
+
+
+리뷰 페이지 
+
+
+
+문의페이지
+
+
+
+
+카테고리 
+ 
